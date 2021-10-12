@@ -11,20 +11,13 @@
     <?php require "database.php" ?>
     <div class="container">
         <div class="container-album">
-            <!-- <div class="album">
-                1
-            </div>
-            <div class="album">
-                2
-            </div>
-            <div class="album">
-                3
-            </div>
-            <div class="album">
-                4
-            </div>
-            <div class="album">
-                5 -->
+            <?php 
+            foreach ($db as $album) {
+                echo ' <div class="album">';
+                echo ($album["title"] . "<br>");
+                echo '</div>';
+            }?>
+          
             </div>
         </div>
         
