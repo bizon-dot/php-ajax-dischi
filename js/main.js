@@ -8,19 +8,29 @@
 
 var app = new Vue({
     el: '#app',
-    data(){
+    data() {
         return {
-            endPoint: "http://192.168.1.79/php-ajax-dischi/api.php",
+            endPoint: "/api.php",
             albums: [],
+            genres: [],
         }
     },
-    mounted: function(){
-        axios
-        .get(this.endPoint)
-        .then(res => {
-          this.albums = res.data;
-          
-        })
-        
+    created(){
+            this.getData();
+    },
+    methods: {
+        getData() {
+            axios
+                .get(this.endPoint)
+                .then(res => {
+                    this.albums = res.data;
+                    this.albums.forEach(album => {
+                        (!this.genres.includes(album.genre)) ? this.genres.push(album.genre) : null;
+                        
+                    });
+                });
+            
+             console.log(this.genres);
+        }
     }
-  })
+})
