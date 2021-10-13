@@ -18,8 +18,15 @@
     <div class="container" id="app">
         <div class="container-album"> 
                 <div class="card-album" v-for="album in albums" >
-                {{ album }}
-            </div>
+                    <div class="info">
+                       <span> {{ album.title }} </span>
+                       <span> {{ album.author }} </span>
+                        <span>{{ album.genre }} </span>
+                        <span>{{ album.year }}</span>
+
+                    </div>
+                
+                </div>
         </div>
     </div>
 

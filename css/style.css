@@ -25,9 +25,15 @@
 .card-album{
     flex-basis: calc(100% / 5 - 20px);
     margin-top: 5em;
+    margin-left: 1em;
     display:flex;
     flex-direction: column;
     
+}
+
+.info{
+    display:flex;
+    flex-direction: column;
 }
 
     
