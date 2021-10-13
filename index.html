@@ -18,6 +18,9 @@
     <div class="container" id="app">
         <div class="container-album"> 
                 <div class="card-album" v-for="album in albums" >
+                    <div class="img-album">
+                        <img :src="album.poster" alt="" srcset="">
+                    </div>
                     <div class="info">
                        <span> {{ album.title }} </span>
                        <span> {{ album.author }} </span>
