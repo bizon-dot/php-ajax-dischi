@@ -53,6 +53,9 @@ var app = new Vue({
                 params:{
                     query: this.selected
                 }
+            }).then(res => {
+                this.albums = res.data;
+
             })
       
         }
