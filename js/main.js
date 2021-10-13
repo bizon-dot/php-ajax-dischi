@@ -15,8 +15,9 @@ var app = new Vue({
             genres: [],
         }
     },
-    created(){
-            this.getData();
+    created() {
+        this.getData();
+
     },
     methods: {
         getData() {
@@ -25,12 +26,22 @@ var app = new Vue({
                 .then(res => {
                     this.albums = res.data;
                     this.albums.forEach(album => {
-                        (!this.genres.includes(album.genre)) ? this.genres.push(album.genre) : null;
-                        
+                        (!this.genres.includes(album.genre)) ? this.genres.push(album.genre): null;
+
                     });
+                    this.populateSelect();
                 });
-            
-             console.log(this.genres);
+
+        },
+        populateSelect() {
+            const search = document.getElementById("genre");
+            // console.log(search);
+            search.innerHTML = ` `;
+            this.genres.forEach((type) => {
+                search.innerHTML += `
+               <option value="${type}">${type.toUpperCase()}</option>    
+          `
+            });
         }
     }
 })
