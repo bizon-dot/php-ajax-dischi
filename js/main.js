@@ -12,6 +12,7 @@ var app = new Vue({
         return {
             endPoint: "api.php",
             albums: [],
+            allAlbums: [],
             genres: [],
             selected: ' ',
         }
@@ -46,16 +47,19 @@ var app = new Vue({
             });
         },
         search(event){
-            this.selected = event.target.value;
+            this.selected = event.target.value.toLowerCase();
+            this.selected = this.selected[0].toUpperCase() + this.selected.substring(1);
             axios
                 .get(this.endPoint)
                 .then(res => {
-                    this.albums = res.data;
-                   
-
+                    this.allAlbums = res.data;
+                    this.albums = [];
+                    this.allAlbums.forEach(album => {
+                        if ((album.genre == this.selected)) {
+                            this.albums.push(album);
+                        }
+                    });
                 })
-
-            console.log(this.selected);
         }
     }
 })
