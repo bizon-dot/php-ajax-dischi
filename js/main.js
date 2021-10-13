@@ -13,6 +13,7 @@ var app = new Vue({
             endPoint: "api.php",
             albums: [],
             genres: [],
+            selected: ' ',
         }
     },
     created() {
@@ -29,19 +30,32 @@ var app = new Vue({
                         (!this.genres.includes(album.genre)) ? this.genres.push(album.genre): null;
 
                     });
-                    this.populateSelect();
+                    // Popolo la select
+                    // this.populateSelect();
                 });
 
         },
+        // "deprecata"
         populateSelect() {
             const search = document.getElementById("genre");
-            // console.log(search);
             search.innerHTML = ` `;
             this.genres.forEach((type) => {
                 search.innerHTML += `
                <option value="${type}">${type.toUpperCase()}</option>    
           `
             });
+        },
+        search(event){
+            this.selected = event.target.value;
+            axios
+                .get(this.endPoint)
+                .then(res => {
+                    this.albums = res.data;
+                   
+
+                })
+
+            console.log(this.selected);
         }
     }
 })
