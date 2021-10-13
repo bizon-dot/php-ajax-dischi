@@ -4,3 +4,23 @@
 // Attraverso l’utilizzo di axios: al caricamento della pagina axios chiederà, attraverso una chiamata api, i dischi a php e li stamperà attraverso vue.
 // Bonus:
 // Attraverso un’altra chiamata api, filtrare gli album per genere
+
+
+var app = new Vue({
+    el: '#app',
+    data(){
+        return {
+            endPoint: "http://192.168.1.79/php-ajax-dischi/api.php",
+            albums: [],
+        }
+    },
+    mounted: function(){
+        axios
+        .get(this.endPoint)
+        .then(res => {
+          this.albums = res.data;
+          
+        })
+        
+    }
+  })

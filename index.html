@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,24 +8,27 @@
     <title>PhpDISK</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <?php require "database.php" ?>
-    <div class="container">
+
+    <div class="container" id="app">
         <div class="container-album">
-            <?php 
-            foreach ($db as $album) {
-                echo ' <div class="album">';
-                echo ($album["title"] . "<br>");
-                echo '</div>';
-            }?>
-          
-            </div>
+            <li v-for="album in albums" >
+                {{ album }}
+            </li>
+
         </div>
-        
+    </div>
+
     </div>
     <!-- VueJs -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <!-- MainJs -->
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"
+        integrity="sha512-Idr7xVNnMWCsgBQscTSCivBNWWH30oo/tzYORviOCrLKmBaRxRflm2miNhTFJNVmXvCtzgms5nlJF4az2hiGnA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> <!-- MainJs -->
+    <!-- Main.js -->
     <script src="js/main.js"></script>
 </body>
+
 </html>
