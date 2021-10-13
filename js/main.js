@@ -10,7 +10,7 @@ var app = new Vue({
     el: '#app',
     data() {
         return {
-            endPoint: "/api.php",
+            endPoint: "api.php",
             albums: [],
             genres: [],
         }
