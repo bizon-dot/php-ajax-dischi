@@ -11,12 +11,15 @@
 
 <body>
 
-    <div class="container" id="app">
-        <div class="container-album">
-            <li v-for="album in albums" >
-                {{ album }}
-            </li>
+    <div class="header">
 
+    </div>
+
+    <div class="container" id="app">
+        <div class="container-album"> 
+                <div class="card-album" v-for="album in albums" >
+                {{ album }}
+            </div>
         </div>
     </div>
 
