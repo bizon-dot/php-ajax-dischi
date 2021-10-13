@@ -22,6 +22,9 @@
         </div>
         
     </div>
-    
+    <!-- VueJs -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <!-- MainJs -->
+    <script src="js/main.js"></script>
 </body>
 </html>
