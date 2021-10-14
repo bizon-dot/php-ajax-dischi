@@ -2,9 +2,10 @@
 require __DIR__ . "/database.php";
 
 
-if (isset($_GET["query"])) {
+if (isset($_GET["query"]) && !($_GET["query"] == "All")) {
     $data = [];
     $query = $_GET["query"];
+  
     header('Content-Type: application/json');
     foreach ($db as $album) {
         if ($album["genre"] == $query ) {
@@ -17,6 +18,7 @@ if (isset($_GET["query"])) {
      header('Content-Type: application/json');
      echo (json_encode($db));
 }
+
 
 
 
