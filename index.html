@@ -16,6 +16,8 @@
             <select @change="search($event)">
                 <option v-for="genre in genres">
                      {{ genre.toUpperCase() }}
+                     <option value="all">ALL</option>
+
                 </option>
          </select>
         </div>

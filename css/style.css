@@ -13,26 +13,30 @@
 }
 
 .header {
+    display: flex;
+    justify-content: center;
     padding: 10px;
     background-color: #2E3A46;
 }
 
 .container-album {
-    width: 80%;
-    margin: 40px auto;
+
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
 }
 
 .card-album {
-    flex-basis: calc(100% / 5 - 20px);
+    flex-basis: calc(100% / 5 - 40px);
     margin-left: 1em;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-
+    background-color: #2E3A46;
     padding: 0.5em;
 
 }
@@ -50,4 +54,6 @@
 .info {
     display: flex;
     flex-direction: column;
+    color:white;
+    font-weight: bolder;
 }
